@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         mUsername = ANONYMOUS;
 
-        mFirebaseDatabase = FirebaseDatabse.getInstance();
-        mMessageDatabaseReference = FirebaseDatabase.getReference().child("messages");
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("messages");
         
         // Initialize references to view
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -115,8 +115,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // TODO: Send messages on click
 
-                // Clear input box
-                mMessageEditText.setText("");
+
+                    // Clear input box
+                    mMessageEditText.setText("");
+
+
+
+
             }
         });
     }

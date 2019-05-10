@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 repositories {
     mavenLocal()
@@ -8,12 +9,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.google.firebase.udacity.friendlychat"
-        minSdkVersion 16
-        targetSdkVersion 24
+        minSdkVersion 15
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -31,14 +33,25 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
 
-    compile 'com.android.support:design:24.2.0'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    //implementation project(":app")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13-beta-2'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+
+    //"compile" was deprecated about 6 months ago in favor of "implementation
+
+    //implementation 'com.google.android.gms:play-services-ads:17.2.0'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.8'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 
     // Displaying images
-    compile 'com.github.bumptech.glide:glide:3.6.1'
-    compile 'com.google.firebase:firebase-database:17.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.google.firebase:firebase-database:17.0.0'
+
+
+
+
 }
-apply plugin: 'com.google.gms.google-services'
+
