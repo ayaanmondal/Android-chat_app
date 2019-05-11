@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.google.firebase.udacity.friendlychat"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -40,8 +40,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.9'
 
     //"compile" was deprecated about 6 months ago in favor of "implementation
-
     //implementation 'com.google.android.gms:play-services-ads:17.2.0'
+
     implementation 'com.google.android.gms:play-services-analytics:16.0.8'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -51,10 +51,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.google.firebase:firebase-database:17.0.0'
 
-
-
-
-
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.3.2'
 
 
 }
