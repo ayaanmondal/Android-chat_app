@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,6 +45,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -165,6 +167,19 @@ public class MainActivity extends AppCompatActivity {
         };
 
     }
+    @Override
+    public void onActivityResult(int requestCode,int resultCode,Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            if(resultCode == RESULT_OK) {
+                Toast.makeText(this,"signed in",Toast.LENGTH_SHORT).show();
+            } else if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(this, "sign in canceled",Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
+    }
+
     @Override
     protected void onResume(){
         super.onResume();
